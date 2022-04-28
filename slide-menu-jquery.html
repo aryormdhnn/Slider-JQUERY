@@ -1,0 +1,134 @@
+<html>
+
+<head>
+    <title>JavaScript</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> </script>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style type="text/css">
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+
+        }
+
+        #panel {
+            position: absolute;
+            width: 100%;
+            height: 50px;
+            padding-top: 40px;
+            background: rgba(245, 245, 245, 1);
+        }
+
+        #content-panel {
+            position: absolute;
+            top: 100px;
+            left: 5%;
+            width: 90%;
+            text-align: center;
+            color: rgb(190, 0, 0);
+
+        }
+
+        #menu {
+            position: absolute;
+            display: block;
+            left: 5%;
+        }
+
+        #title {
+            position: absolute;
+            display: block;
+            left: 50%;
+            transform: translate(-50%, 10%);
+        }
+
+        #sidebar {
+            position: fixed;
+            display: inline-block;
+            z-index: 3;
+            top: 0px;
+            height: 100%;
+            width: 200px;
+            right: -200px;
+            background: rgb(0, 81, 255);
+            transition: all 0.9s ease-in-out;
+        }
+
+        ul.menu {
+            margin: 0;
+            padding: 0;
+            padding-left: 5px;
+            list-style-type: none;
+            display: block;
+            line-height: 165%;
+            width: 200px;
+            color: #fff;
+        }
+
+        ul.menu li {
+            margin: 0;
+            padding: 10px;
+        }
+
+        #close-btn {
+            color: #000;
+
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //ganti script dibawah menjadi JQuery dan lengkapilah
+            $("#menu").click(function () {
+                $("#sidebar").css("right", "0px");
+
+            });
+            $("#close-btn").click(function () {
+                $("#sidebar").css("right", "-200px");
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <div style="height: 100%; background-color: #ccc">
+        <div id="panel">
+            <div id="menu"><span class="fa fa-bars fa-2x" onclick="slideMe()"></div>
+            <div id="title">SLIDE MENU</div>
+        </div>
+
+        <div id="content-panel">
+
+            <h3>Nama Aryo Romadhon Vardhana</h3>
+            <h3>Nim 2044190011</h3>
+            <h3>Matkul Praktikum Teknologi Web</h3>
+        </div>
+
+        <div id="sidebar">
+            <div style="width: 100%; height: 130px; background-color: #fff;
+text-align: center;">
+                <div style="padding-top: 10px; border: 0px solid #000"><span class="fa fa-user-circle-o fa-5x"></div>
+                <div style="padding-top: 6px; border: 0px solid #000"><span id="profile" style="color: #000;"></span>
+                </div>
+            </div>
+            <div style="padding-top: 15px; text-transform: initial;
+background-color: rgb(0, 81, 255)">
+                <ul class="menu">
+
+                    <li><button id="close-btn" onclick="hideMe()"> Close </button></li>
+                    <li><i class="fa fa-dashboard"></i> <span style="padding-left: 8px">Dashboard</span></li>
+                    <li><i class="fa fa-address-card-o"></i> <span style="padding-left: 8px">Profile</span></li>
+                    <li><i class="fa fa-calendar-o"></i> <span style="padding-left: 8px">Contact</span></li>
+                    <li><i class="fa fa-power-off
+fa-lg"></i> <span id="logout" style="padding-left:
+8px">Logout</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
